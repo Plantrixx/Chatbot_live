@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chat Widget</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Supabase CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../dashboard/supabase-config.js"></script>
+    <style>
+        /* Standalone widget should always be visible and take full height */
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            background: transparent;
+        }
+
+        #ai-chatbot-widget {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .chat-container {
+            position: fixed;
+            bottom: 0px;
+            right: 0px;
+            width: 100%;
+            height: 100%;
+            display: flex !important;
+            /* Force visible in iframe mode */
+            opacity: 1 !important;
+            transform: none !important;
+            pointer-events: auto !important;
+            border-radius: 0;
+            /* Takes full iframe space */
+        }
+
+        .chat-fab {
+            display: none !important;
+        }
+
+        /* No FAB inside the iframe */
+    </style>
+</head>
+
+<body>
+    <div id="ai-chatbot-widget"></div>
+    <script src="chatbot.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | BotManager Pro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .login-card {
+            width: 100%;
+            max-width: 400px;
+            padding: 50px;
+            text-align: center;
+        }
+
+        .login-card .logo {
+            justify-content: center;
+            margin-bottom: 30px;
+            background: none;
+            -webkit-text-fill-color: white;
+        }
+
+        .login-card h2 {
+            margin-bottom: 24px;
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .login-card .btn-primary {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .error-msg {
+            color: #ff453a;
+            /* iOS Red */
+            font-size: 14px;
+            margin-top: 15px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-card glass">
+        <div class="logo">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2a10 10 0 1 0 10 10H12V2z"></path>
+                <path d="M12 12L2.1 14.9"></path>
+                <path d="M12 12l9.9 2.9"></path>
+            </svg>
+            <span>BotManager Pro</span>
+        </div>
+        <h2>Willkommen zurück</h2>
+        <form id="login-form">
+            <div class="form-group" style="text-align: left;">
+                <label>E-Mail Adresse</label>
+                <input type="email" id="email" placeholder="name@agentur.de" required>
+            </div>
+            <div class="form-group" style="text-align: left;">
+                <label>Passwort</label>
+                <input type="password" id="password" placeholder="••••••••" required>
+            </div>
+            <button type="submit" class="btn-primary">Anmelden</button>
+            <p id="error-msg" class="error-msg">Ungültige E-Mail oder Passwort.</p>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('login-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const errorMsg = document.getElementById('error-msg');
+
+            // Default Admin Credentials
+            if (email === 'admin@agency.com' && password === 'admin123') {
+                sessionStorage.setItem('agency_logged_in', 'true');
+                sessionStorage.setItem('user_name', 'Admin');
+                window.location.href = 'index.html';
+            } else {
+                errorMsg.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+
+</html>

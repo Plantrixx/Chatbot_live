@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agency Portal | BotManager Pro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+    <aside class="sidebar">
+        <div class="logo">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2a10 10 0 1 0 10 10H12V2z"></path>
+                <path d="M12 12L2.1 14.9"></path>
+                <path d="M12 12l9.9 2.9"></path>
+            </svg>
+            <span>BotManager Pro</span>
+        </div>
+        <nav>
+            <a href="#" class="nav-item active" id="nav-dashboard">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="14" width="7" height="7"></rect>
+                    <rect x="3" y="14" width="7" height="7"></rect>
+                </svg>
+                Dashboard
+            </a>
+            <a href="#" class="nav-item" id="nav-team">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                Team
+            </a>
+            <a href="#" class="nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="3"></circle>
+                    <path
+                        d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                    </path>
+                </svg>
+                Settings
+            </a>
+        </nav>
+        <div style="margin-top: auto; padding-top: 20px; border-top: 1px solid var(--glass-border);">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
+                <div
+                    style="width: 32px; height: 32px; border-radius: 50%; background: var(--gradient); display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 12px;">
+                    A</div>
+                <div>
+                    <div style="font-size: 14px; font-weight: 600;" id="user-display-name">Admin</div>
+                    <div style="font-size: 11px; color: var(--text-dim);">Agency Owner</div>
+                </div>
+            </div>
+            <a href="#" class="nav-item" id="logout-btn" style="color: #ef4444;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                    <polyline points="16 17 21 12 16 7"></polyline>
+                    <line x1="21" y1="12" x2="9" y2="12"></line>
+                </svg>
+                Abmelden
+            </a>
+        </div>
+    </aside>
+
+    <main class="main-content" id="dashboard-view">
+        <header>
+            <h1>Client Chatbots</h1>
+            <button class="btn-primary" id="open-modal-btn">Build New AI Bot</button>
+        </header>
+
+        <div class="client-grid" id="client-grid">
+            <!-- Client cards will be injected here -->
+        </div>
+    </main>
+
+    <main class="main-content" id="team-view" style="display: none;">
+        <header>
+            <h1>Team Management</h1>
+            <button class="btn-primary" id="open-team-modal-btn">Mitarbeiter einladen</button>
+        </header>
+
+        <div class="client-card" style="width: 100%; max-width: none; background: rgba(28,28,30,0.6);">
+            <table style="width: 100%; border-collapse: collapse; text-align: left;">
+                <thead>
+                    <tr style="border-bottom: 1px solid var(--glass-border);">
+                        <th style="padding: 15px; color: var(--text-dim);">Name</th>
+                        <th style="padding: 15px; color: var(--text-dim);">E-Mail</th>
+                        <th style="padding: 15px; color: var(--text-dim);">Rolle</th>
+                        <th style="padding: 15px; color: var(--text-dim); text-align: right;">Aktion</th>
+                    </tr>
+                </thead>
+                <tbody id="team-table-body">
+                    <!-- Team members injected here -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- Modal for Adding/Editing Bot -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal">
+            <h2 id="modal-title">New AI Chatbot</h2>
+            <form id="bot-form">
+                <div class="form-group">
+                    <label>Client Name</label>
+                    <input type="text" id="client-name" placeholder="e.g. Auto-Haus Schmidt" required>
+                </div>
+                <div class="form-group">
+                    <label>Bot Name (Visible to users)</label>
+                    <input type="text" id="bot-display-name" placeholder="e.g. Max" required>
+                </div>
+                <div class="form-group">
+                    <label>Customer Website URL (e.g. www.schmidt.de)</label>
+                    <input type="text" id="client-website" placeholder="e.g. https://www.autohaus-schmidt.de">
+                </div>
+                <div class="form-group" style="display: flex; gap: 20px;">
+                    <div style="flex: 1;">
+                        <label>Branding Color</label>
+                        <input type="color" id="theme-color" value="#6366f1" style="height: 45px; cursor: pointer;">
+                    </div>
+                    <div style="flex: 3;">
+                        <label>Bot Avatar URL (Optional)</label>
+                        <input type="text" id="bot-avatar-url" placeholder="https://path-to-logo.png">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>OpenAI API Key (Client Specific)</label>
+                    <input type="password" id="client-openai-key" placeholder="sk-...">
+                </div>
+                <div class="form-group">
+                    <label>Knowledge Base (Strictly followed by bot)</label>
+                    <textarea id="knowledge-base" rows="4"
+                        placeholder="Paste service details, FAQs, or company info here..."></textarea>
+                    <div id="kb-status">💡 The bot is instructed to strictly use this information.</div>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-outline" id="close-modal-btn">Cancel</button>
+                    <button type="submit" class="btn-primary">Save & Generate Code</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Embed Code Modal -->
+    <div class="modal-overlay" id="embed-overlay">
+        <div class="modal">
+            <h2>Embed Code</h2>
+            <p style="font-size: 14px; color: var(--text-dim);">Copy and paste this code before the closing
+                &lt;/body&gt; tag of your client's website.</p>
+            <pre id="embed-code"></pre>
+            <div class="modal-actions">
+                <button class="btn-primary" id="copy-btn">Copy to Clipboard</button>
+                <button class="btn-outline" id="close-embed-btn">Done</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Team Member Modal -->
+    <div class="modal-overlay" id="team-modal-overlay">
+        <div class="modal">
+            <h2>Neuen Mitarbeiter einladen</h2>
+            <form id="team-form">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" id="member-name" placeholder="z.B. Max Mustermann" required>
+                </div>
+                <div class="form-group">
+                    <label>E-Mail</label>
+                    <input type="email" id="member-email" placeholder="max@agentur.de" required>
+                </div>
+                <div class="form-group">
+                    <label>Rolle</label>
+                    <select id="member-role"
+                        style="width: 100%; background: rgba(255, 255, 255, 0.05); border: 1px solid var(--glass-border); padding: 12px; border-radius: 10px; color: white;">
+                        <option value="Agent">Agent</option>
+                        <option value="Support">Support</option>
+                        <option value="Manager">Manager</option>
+                    </select>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-outline" id="close-team-modal-btn">Abbrechen</button>
+                    <button type="submit" class="btn-primary">Einladen</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Supabase CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+
+</html>
