@@ -50,3 +50,50 @@ body {
     align-items: center;
     justify-content: center;
 }
+/* Das hier fehlt für die schicke Box in der Mitte */
+.login-box {
+    width: 400px;
+    padding: 40px;
+    background: var(--card-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 20px 80px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.login-box h1 {
+    font-size: 28px;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.login-box p {
+    color: var(--text-dim);
+    margin-bottom: 32px;
+}
+
+/* Und das hier für die Eingabefelder */
+.form-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-dim);
+    font-size: 14px;
+}
+
+.form-group input {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    padding: 12px 16px;
+    border-radius: 12px;
+    color: white;
+    outline: none;
+    box-sizing: border-box; /* Wichtig für die Breite! */
+}
