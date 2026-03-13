@@ -107,3 +107,22 @@ body {
     border-color: #0A84FF;
     background: rgba(255, 255, 255, 0.08);
 }
+.btn-primary {
+    width: 100%;
+    background: #FFFFFF;
+    color: #000000;
+    border: none;
+    padding: 14px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-top: 10px;
+}
+
+.btn-primary:hover {
+    background: #F2F2F7;
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
