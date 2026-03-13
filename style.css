@@ -2,106 +2,56 @@
     --primary: #0A84FF;
     --bg-dark: #000000;
     --card-bg: rgba(28, 28, 30, 0.7);
-    --glass-border: rgba(255, 255, 255, 0.12);
+    --glass-border: rgba(255, 255, 255, 0.1);
     --text-main: #FFFFFF;
     --text-dim: #8E8E93;
-    --font-sans: 'Inter', -apple-system, sans-serif;
 }
 
+/* Ganze Seite auf Schwarz und Glow */
 body {
     margin: 0;
-    font-family: var(--font-sans);
-    background-color: var(--bg-dark);
-    color: var(--text-main);
-    min-height: 100vh;
+    background: radial-gradient(circle at 50% 50%, rgba(10, 132, 255, 0.12) 0%, #000 80%) no-repeat fixed !important;
+    background-color: #000 !important;
+    color: white;
+    font-family: -apple-system, sans-serif;
     display: flex;
+    min-height: 100vh;
 }
 
-/* --- LOGIN & MODAL GLOW --- */
-.login-container, .modal-overlay {
-    background: radial-gradient(circle at center, rgba(10, 132, 255, 0.15) 0%, rgba(0, 0, 0, 1) 70%) !important;
-}
-
-.login-box, .modal {
-    background: rgba(28, 28, 30, 0.8) !important;
-    backdrop-filter: blur(30px);
-    -webkit-backdrop-filter: blur(30px);
-    border: 1px solid var(--glass-border) !important;
-    border-radius: 24px;
-    box-shadow: 0 0 40px rgba(10, 132, 255, 0.2); /* Der blaue Schein */
-}
-
-/* --- SIDEBAR FIX --- */
+/* Sidebar bändigen */
 .sidebar {
     width: 240px;
-    background: rgba(18, 18, 18, 0.8);
+    background: rgba(15, 15, 15, 0.8);
     backdrop-filter: blur(20px);
     border-right: 1px solid var(--glass-border);
-    padding: 24px 16px;
-    height: 100vh;
-    position: sticky;
-    top: 0;
-}
-
-.logo {
+    padding: 20px;
     display: flex;
-    align-items: center;
-    gap: 12px;
-    font-weight: 700;
-    margin-bottom: 40px;
-    color: var(--primary);
+    flex-direction: column;
 }
 
-.logo svg { width: 28px; height: 28px; }
+.nav-item svg { width: 20px !important; height: 20px !important; margin-right: 10px; }
 
-.nav-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 12px;
-    color: var(--text-dim);
-    text-decoration: none;
-    border-radius: 12px;
-    font-size: 14px;
-    margin-bottom: 4px;
+/* Dashboard Content */
+.main-content { flex: 1; padding: 40px; }
+
+/* MODAL / LOGIN BOX - Der Antigravity Glas-Look */
+.modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8); backdrop-filter: blur(10px);
+    display: none; align-items: center; justify-content: center; z-index: 1000;
 }
 
-.nav-item.active, .nav-item:hover {
-    background: rgba(255, 255, 255, 0.05);
-    color: white;
+.modal {
+    background: #1C1C1E;
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 30px;
+    width: 500px;
+    box-shadow: 0 0 40px rgba(10, 132, 255, 0.2);
 }
 
-.nav-item svg { width: 20px; height: 20px; }
-
-/* --- CONTENT AREA --- */
-.main-content {
-    flex: 1;
-    padding: 40px 60px;
-}
-
+/* Buttons */
 .btn-primary {
-    background: white;
-    color: black;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 12px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-.btn-primary:hover {
-    transform: scale(1.02);
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-}
-
-/* --- FORM ELEMENTS --- */
-input, textarea, select {
-    width: 100%;
-    background: rgba(255, 255, 255, 0.05) !important;
-    border: 1px solid var(--glass-border) !important;
-    padding: 12px;
-    border-radius: 10px;
-    color: white;
-    margin-top: 5px;
+    background: white; color: black; border: none; padding: 12px 20px;
+    border-radius: 10px; font-weight: 600; cursor: pointer; width: 100%;
 }
